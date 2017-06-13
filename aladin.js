@@ -4,13 +4,21 @@ function get_aladin_url(city_id, date, time) {
 
 function get_last_aladins(city_id) {
     var d = new Date()
-    var date = "" +  d.getFullYear() + ("0"+(d.getMonth()+1)).slice(-2) + ("0" + d.getDate()).slice(-2);
+    var today_str = "" +  d.getFullYear() + ("0"+(d.getMonth()+1)).slice(-2) + ("0" + d.getDate()).slice(-2);
 
+    d.setDate(d.getDate() - 1)
+    var yesterday_str = "" +  d.getFullYear() + ("0"+(d.getMonth()+1)).slice(-2) + ("0" + d.getDate()).slice(-2);
+    
     return [
-        {src: get_aladin_url(city_id, date, '0000')},
-        {src: get_aladin_url(city_id, date, '0600')},
-        {src: get_aladin_url(city_id, date, '1200')},
-        {src: get_aladin_url(city_id, date, '0800')}
+        {src: get_aladin_url(city_id, today_str, '1800')},
+        {src: get_aladin_url(city_id, today_str, '1200')},
+        {src: get_aladin_url(city_id, today_str, '0600')},
+        {src: get_aladin_url(city_id, today_str, '0000')},
+
+        {src: get_aladin_url(city_id, yesterday_str, '1800')},
+        {src: get_aladin_url(city_id, yesterday_str, '1200')},
+        {src: get_aladin_url(city_id, yesterday_str, '0600')},
+        {src: get_aladin_url(city_id, yesterday_str, '0000')}
     ]
 }
 
