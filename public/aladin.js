@@ -31,7 +31,8 @@ new Vue({
         available_cities: [
             { id: '32737', name: 'Bratislava' },
             { id: '31360', name: 'Trnava' },
-            { id: '31438', name: 'Cadca' }
+            { id: '31438', name: 'Cadca' },
+            { id: '32477', name: 'Zemberovce' }
         ]
     },
     computed: {
